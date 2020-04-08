@@ -1,6 +1,15 @@
-<form [formGroup]="formGroup" (submit)="addTodo(formGroup.value)">
-  <label for="todo">
-    <input type="text" id="todo" name="todo" formControlName="todo" />
-  </label>
-  <button>Add</button>
+<form
+  [formGroup]="formGroup"
+  (submit)="addTodo(formGroup.value)"
+  class="add-todo-form"
+>
+  <input
+    class="text-input"
+    type="text"
+    id="todo"
+    name="todo"
+    formControlName="todo"
+    placeholder="Enter Todo"
+  />
+  <button class="button">Add</button>
 </form>

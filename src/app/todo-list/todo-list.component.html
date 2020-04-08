@@ -1,25 +1,28 @@
-<h3 *ngIf="pendingTodos.length">Pending Todos ({{ pendingTodos.length }})</h3>
-
-<div *ngFor="let todo of pendingTodos">
-  <p>
-    <input
-      type="checkbox"
-      [checked]="todo.isComplete"
-      (change)="toggleTodo(todo)"
-    />{{ todo.todo }}
-  </p>
+<h3 *ngIf="pendingTodos.length" class="heading">
+  Pending Todos ({{ pendingTodos.length }})
+</h3>
+<div>
+  <div
+    *ngFor="let todo of pendingTodos"
+    class="todo-item"
+    (click)="toggleTodo(todo)"
+  >
+    <span class="todo-item-text">{{ todo.todo }}</span>
+    <span class="todo-item-info">Complete</span>
+  </div>
 </div>
 
-<h3 *ngIf="completedTodos.length">
+<h3 *ngIf="completedTodos.length" class="heading">
   Completed Todos ({{ completedTodos.length }})
 </h3>
 
-<div *ngFor="let todo of completedTodos">
-  <p>
-    <input
-      type="checkbox"
-      [checked]="todo.isComplete"
-      (change)="toggleTodo(todo)"
-    />{{ todo.todo }}
-  </p>
+<div>
+  <div
+    *ngFor="let todo of completedTodos"
+    (click)="toggleTodo(todo)"
+    class="todo-item"
+  >
+    <span class="todo-item-text">{{ todo.todo }}</span>
+    <span class="todo-item-info">Undo</span>
+  </div>
 </div>

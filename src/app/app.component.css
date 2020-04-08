@@ -1,0 +1,15 @@
+:host(.container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 32px;
+}
+
+app-add-todo {
+  margin-bottom: 30px;
+}
