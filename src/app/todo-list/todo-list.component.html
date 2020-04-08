@@ -1,3 +1,25 @@
+<h3 *ngIf="pendingTodos.length">Pending Todos ({{ pendingTodos.length }})</h3>
+
 <div *ngFor="let todo of pendingTodos">
-  <h3>{{ todo.todo }}</h3>
+  <p>
+    <input
+      type="checkbox"
+      [checked]="todo.isComplete"
+      (change)="toggleTodo(todo)"
+    />{{ todo.todo }}
+  </p>
+</div>
+
+<h3 *ngIf="completedTodos.length">
+  Completed Todos ({{ completedTodos.length }})
+</h3>
+
+<div *ngFor="let todo of completedTodos">
+  <p>
+    <input
+      type="checkbox"
+      [checked]="todo.isComplete"
+      (change)="toggleTodo(todo)"
+    />{{ todo.todo }}
+  </p>
 </div>
