@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup" (submit)="addTodo(formGroup.value)">
+  <label for="todo">
+    <input type="text" id="todo" name="todo" formControlName="todo" />
+  </label>
+  <button>Add</button>
+</form>
